@@ -69,7 +69,8 @@ This AI Calling Agent makes outbound calls to potential customers to sell "Call 
 2. Edit the `.env` file and fill in your credentials:
    - `TWILIO_ACCOUNT_SID`: Your Twilio Account SID from the console
    - `TWILIO_AUTH_TOKEN`: Your Twilio Auth Token from the console
-   - `TWILIO_PHONE_NUMBER`: Your purchased Twilio phone number
+   - `TWILIO_PHONE_NUMBER`: Your purchased Twilio phone number (with country code, e.g., +1234567890)
+   - `PERSONAL_PHONE`: Your personal phone number for testing (with country code, e.g., +1987654321)
    - `OPENAI_API_KEY`: Your OpenAI API key
    - `MONGO_URI`: MongoDB connection string (local or Atlas)
    - `BASE_URL`: Your ngrok URL (see ngrok setup below)
