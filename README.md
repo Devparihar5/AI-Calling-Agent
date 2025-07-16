@@ -6,6 +6,10 @@ An automated calling solution that uses AI to make sales calls for Call Worklog 
 
 This AI Calling Agent makes outbound calls to potential customers to sell "Call Worklog AI" - a tool that automatically generates work logs based on actual work performed. The agent can also handle customer queries and record call outcomes in a database for follow-up and analysis.
 
+## System Architecture
+
+![System Architecture](media/system_architecture.png)
+
 ## Features
 
 - **AI-Powered Sales Calls:** Uses OpenAI to generate natural, persuasive sales conversations

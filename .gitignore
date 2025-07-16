@@ -11,6 +11,7 @@ dist/
 *.class
 .env
 *_pycache__/
+Extra/
 # Compiled Python bytecode
 *.py[cod]
 
