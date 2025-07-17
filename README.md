@@ -21,7 +21,7 @@ This AI Calling Agent makes outbound calls to potential customers to sell "Call 
 ## Project Structure
 
 ```
-
+AI-Calling-Agent/
 ├── make_call.py          # Script for making a single outbound call
 ├── requirements.txt      # Project dependencies
 └── src/
@@ -44,66 +44,15 @@ This AI Calling Agent makes outbound calls to potential customers to sell "Call 
 
 ## Setup Instructions
 
-### 1. Clone and Install
+For quick setup:
 
 1. Clone this repository
-2. Create a virtual environment: `python -m venv .venv`
-3. Activate the virtual environment:
-   - Windows: `.venv\Scripts\activate`
-   - Linux/Mac: `source .venv/bin/activate`
-4. Install dependencies: `pip install -r requirements.txt`
+2. Create and activate a virtual environment
+3. Install dependencies: `pip install -r requirements.txt`
+4. Configure your environment variables in `src/.env`
+5. Start the Flask application and make test calls
 
-### 2. Twilio Setup
-
-1. Create a Twilio account at [twilio.com](https://www.twilio.com/try-twilio)
-2. Once registered, navigate to your [Twilio Console Dashboard](https://www.twilio.com/console)
-3. Find your Account SID and Auth Token (you'll need these for the .env file)
-4. Purchase a Twilio phone number:
-   - Go to Phone Numbers > Buy a Number
-   - Search for a number with voice capabilities
-   - Complete the purchase
-5. Note down your new Twilio phone number (with country code, e.g., +1234567890)
-
-### 3. Environment Configuration
-
-1. Copy `.env.example` to `.env` in the src directory:
-   ```
-   cp src/.env.example src/.env
-   ```
-2. Edit the `.env` file and fill in your credentials:
-   - `TWILIO_ACCOUNT_SID`: Your Twilio Account SID from the console
-   - `TWILIO_AUTH_TOKEN`: Your Twilio Auth Token from the console
-   - `TWILIO_PHONE_NUMBER`: Your purchased Twilio phone number (with country code, e.g., +1234567890)
-   - `PERSONAL_PHONE`: Your personal phone number for testing (with country code, e.g., +1987654321)
-   - `OPENAI_API_KEY`: Your OpenAI API key
-   - `MONGO_URI`: MongoDB connection string (local or Atlas)
-   - `BASE_URL`: Your ngrok URL (see ngrok setup below)
-
-### 4. MongoDB Setup
-
-1. Install MongoDB locally or create a free MongoDB Atlas account
-2. If using MongoDB Atlas:
-   - Create a new cluster
-   - Set up database access (username/password)
-   - Set up network access (IP whitelist)
-   - Get your connection string and add it to the .env file
-
-### 5. Ngrok Setup for Local Testing
-
-Twilio needs a public URL to send webhooks to your local application. Ngrok creates a secure tunnel to your local server.
-
-1. Download and install [ngrok](https://ngrok.com/download)
-2. Sign up for a free ngrok account and get your authtoken
-3. Authenticate ngrok with your token:
-   ```
-   ngrok authtoken YOUR_AUTH_TOKEN
-   ```
-4. Start ngrok to create a tunnel to your Flask application:
-   ```
-   ngrok http 5000
-   ```
-5. Copy the https URL provided by ngrok (e.g., https://a1b2c3d4.ngrok.io)
-6. Update your `.env` file with this URL as the `BASE_URL`
+For detailed setup instructions, including Twilio configuration and local testing with ngrok, see [SETUP_GUIDE.md](SETUP_GUIDE.md).
 
 ## Running the Application
 
@@ -148,7 +97,3 @@ This will initiate a call from your Twilio number to the phone number specified 
 - Call recordings and transcripts are stored in MongoDB for analysis
 - The TTS service converts AI responses to audio using Edge TTS
 - Twilio handles the actual phone calls and audio streaming
-
-## License
-
-[MIT License](LICENSE)
